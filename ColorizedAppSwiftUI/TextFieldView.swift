@@ -17,7 +17,9 @@ struct TextFieldView: View {
     var body: some View {
         
         TextField("", text: $textValue) { _ in
-            checkValue()
+            withAnimation {
+                checkValue()
+            }
         }
         .frame(width: 55, alignment: .trailing)
         .multilineTextAlignment(.trailing)

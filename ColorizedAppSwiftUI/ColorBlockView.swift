@@ -16,7 +16,9 @@ struct ColorBlockView: View {
     
     var body: some View {
         HStack {
-            TextView(value: sliderValue)
+            Text("\(lround(sliderValue))")
+                .foregroundColor(.white)
+                .frame(width: 40, height: 25, alignment: .leading)
             
             Slider(
                 value: $sliderValue,
