@@ -13,9 +13,9 @@ enum Field: Int {
 
 struct ContentView: View {
     
-    @State private var redColor = Double.random(in: 0...255)
-    @State private var greenColor = Double.random(in: 0...255)
-    @State private var blueColor = Double.random(in: 0...255)
+    @State private var redColor = Double.random(in: 0...255).rounded()
+    @State private var greenColor = Double.random(in: 0...255).rounded()
+    @State private var blueColor = Double.random(in: 0...255).rounded()
     
     @FocusState private var focusedField: Field?
     

@@ -16,7 +16,7 @@ struct ColorBlockView: View {
     
     var body: some View {
         HStack {
-            Text("\(lround(sliderValue))")
+            Text(sliderValue.formatted())
                 .foregroundColor(.white)
                 .frame(width: 40, height: 25, alignment: .leading)
             
@@ -25,15 +25,15 @@ struct ColorBlockView: View {
                 in: 0...255,
                 step: 1
             )
-            .accentColor(sliderColor)
+            .tint(sliderColor)
             .onChange(of: sliderValue) { newValue in
-                text = "\(lround(newValue))"
+                text = sliderValue.formatted()
             }
             
             TextFieldView(textValue: $text, value: $sliderValue)
         }
         .onAppear {
-            text = "\(lround(sliderValue))"
+            text = sliderValue.formatted()
         }
     }
 }
